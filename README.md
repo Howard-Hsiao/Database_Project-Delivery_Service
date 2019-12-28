@@ -8,17 +8,17 @@
 * 對於每一個用戶(User)，它有
   * __唯一的UID__
   * 姓名(Uname)
-  * 帳號名稱(accountName)
+  * 帳號名稱(account)
   * 密碼(password)
   * 地址(address)
-  * 連絡電話(phoneNum)
+  * 連絡電話(phone)
   * 照片(U_IMG_URL)
 
 
 * 對於每一個外送平台(Platform)，它有
   * __唯一的 PID__
   * 名稱(PName)
-  * 運費(dlivery_fee)
+  * 運費(shippingFee)
   * 照片(P_IMG_URL)
 
 
@@ -26,18 +26,18 @@
   * __外送平台(PID)__
   * __平台活動識別碼(PA_ID)__
   * 名稱(PA_Name)
-  * 活動期間運費(Activity_dlivery_fee)
+  * 活動期間運費(discount_shippingFee)
   * 食物折扣模式(foodDiscountMode)
   * 食物折扣模式_計算用參數1(FDM_arg1) # 當該欄位為null時，表無此參數
   * 食物折扣模式_計算用參數2(FDM_arg2) # 當該欄位為null時，表無此參數
   * 活動敘述(description)
-  * (P_ACT_IMG_URL)
-  * (start_time)
-  * (end_time)
+  * 照片(P_ACT_IMG_URL)
+  * 開始時間(start_time)
+  * 結束時間(end_time)
 
 
 * 對於每一個餐廳(Restaurant)，它有
-  * __唯一的 EID__
+  * __唯一的 RID__
   * 名稱(RName)
   * 地址(address)
   * 照片(R_IMG_URL)
@@ -49,7 +49,7 @@
 
 
 * 對於每一個食物(Food)，他是餐廳的weak entity，它有
-  * __所屬餐廳(RID)__
+  * __所屬餐廳(FID)__
   * __唯一的 FID__
   * 名稱(Fname)
   *	價格(price)
