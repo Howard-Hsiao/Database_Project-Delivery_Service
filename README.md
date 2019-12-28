@@ -49,7 +49,7 @@
 
 
 * 對於每一個食物(Food)，他是餐廳的weak entity，它有
-  * __所屬餐廳(FID)__
+  * __所屬餐廳(RID)__
   * __唯一的 FID__
   * 名稱(Fname)
   *	價格(price)
