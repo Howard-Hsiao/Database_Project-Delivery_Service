@@ -43,11 +43,6 @@
   * 照片(R_IMG_URL)
 
 
-* 對於每一個類別(Category)，它有
-  * __唯一的 CID__
-  * 名稱(CName)
-
-
 * 對於每一個食物(Food)，他是餐廳的weak entity，它有
   * __所屬餐廳(RID)__
   * __唯一的 FID__
@@ -78,3 +73,6 @@
 
 ## ER_diagram
 ![ER_diagram](./database_design/ER_diagram.png)
+
+## 圖片來源:
+本資料庫實作僅供學術研究使用，餐廳及食物部分的圖片均來源於UberEats、平台圖片則得自於google search，其著作權皆屬原作者所有。 如有侵權或原著作者與分享者不同意轉貼，請立即告知，本人將立刻處理並刪除檔案。

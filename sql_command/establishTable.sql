@@ -1,13 +1,12 @@
 DROP DATABASE IF EXISTS delivery_db;
-
 CREATE DATABASE delivery_db;
-
+-- path: D:\108-1\database\project\sql_command\establisTable.sql
 USE delivery_db;
 
 DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
     `UID` int(11) NOT NULL AUTO_INCREMENT,
-    `Uname` VARCHAR(255) NOT NULL,
+    `UName` VARCHAR(255) NOT NULL,
     `account` VARCHAR(255) NOT NULL,
     `password` VARCHAR(255) NOT NULL,
     `address` VARCHAR(255) NOT NULL,
@@ -21,7 +20,7 @@ CREATE TABLE `User` (
 DROP TABLE IF EXISTS `platform`;
 CREATE TABLE `platform` (
     `PID` int(11) NOT NULL AUTO_INCREMENT,
-    `Pname` VARCHAR(255) NOT NULL,
+    `PName` VARCHAR(255) NOT NULL,
     `shippingFee` int(11) NOT NULL,
     `P_IMG_URL` VARCHAR(255), 
     PRIMARY KEY(`PID`)
@@ -62,38 +61,23 @@ CREATE TABLE `supportedPlatform` (
     FOREIGN KEY (`PID`) REFERENCES `platform`(`PID`) ON DELETE CASCADE
 ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
-DROP TABLE IF EXISTS `Category`;
-CREATE TABLE `Category` (
-    `CID` int(11) NOT NULL AUTO_INCREMENT,
-    `CName` VARCHAR(255) NOT NULL,
-    PRIMARY KEY(`CID`)
-) ENGINE = MyISAM DEFAULT CHARSET = utf8;
-
 DROP TABLE IF EXISTS `RestaurantCategory`;
 CREATE TABLE `RestaurantCategory` (
     `RID` int(11) NOT NULL,
-    `CID` int(11) NOT NULL,
-    PRIMARY KEY(`RID`, `CID`), 
-    FOREIGN KEY (`RID`) REFERENCES `Restaurant`(`RID`) ON DELETE CASCADE, 
-    FOREIGN KEY (`CID`) REFERENCES `Category`(`CID`) ON DELETE CASCADE
+    `CName` VARCHAR(255) NOT NULL,
+    PRIMARY KEY(`RID`), 
+    FOREIGN KEY (`RID`) REFERENCES `Restaurant`(`RID`) ON DELETE CASCADE
 ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
 DROP TABLE IF EXISTS `Food`;
 CREATE TABLE `Food` (
+    `RID` int(11) NOT NULL,
     `FID` int(11) NOT NULL AUTO_INCREMENT,
     `FName`VARCHAR(255) NOT NULL,
     `price`int(11) NOT NULL,
     `F_IMG_URL` VARCHAR(255), 
-    PRIMARY KEY(`FID`)
-) ENGINE = MyISAM DEFAULT CHARSET = utf8;
-
-DROP TABLE IF EXISTS `ResaurantFood`;
-CREATE TABLE `ResaurantFood` (
-    `RID` int(11) NOT NULL,
-    `FID` int(11) NOT NULL,
     PRIMARY KEY (`RID`, `FID`), 
-    FOREIGN KEY (`RID`) REFERENCES Restaurant(`RID`) ON DELETE CASCADE, 
-    FOREIGN KEY (`FID`) REFERENCES Food(`FID`) ON DELETE CASCADE
+    FOREIGN KEY (`RID`) REFERENCES Restaurant(`RID`) ON DELETE CASCADE
 ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
 
 DROP TABLE IF EXISTS `Transaction`;
