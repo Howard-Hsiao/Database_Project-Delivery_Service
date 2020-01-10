@@ -37,8 +37,8 @@ CREATE TABLE `platform_activity` (
     `FDM_arg2` float,
     `description` VARCHAR(255),
     `P_ACT_IMG_URL` VARCHAR(255),
-    `start_time` TIME,
-    `end_time` TIME,
+    `start_time` DATETIME,
+    `end_time` DATETIME,
     PRIMARY KEY (`PID`, `PA_ID`),
     FOREIGN KEY (`PID`) REFERENCES `platform`(`PID`) ON DELETE CASCADE
 ) ENGINE = MyISAM DEFAULT CHARSET = utf8;
